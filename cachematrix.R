@@ -52,3 +52,27 @@ cacheSolve <- function(x, ...) {
                            #   to the above calculated value.
     inv                    # Return inverse of matrix
 }
+
+# Tested with following example matrices
+# > m1 = matrix(1:4, 2,2)
+# > m1c = makeCacheMatrix(m1)
+# > m1
+#       [,1] [,2]
+# [1,]    1    3
+# [2,]    2    4
+# > cacheSolve(m1c)
+#       [,1] [,2]
+# [1,]   -2  1.5
+# [2,]    1 -0.5
+# > m2 = matrix(c(1,2,3,2,2,2,1,2,1),3,3)
+# > m2c = makeCacheMatrix(m2)
+# > m2
+#       [,1] [,2] [,3]
+# [1,]    1    2    1
+# [2,]    2    2    2
+# [3,]    3    2    1
+# > cacheSolve(m2c)
+#       [,1] [,2] [,3]
+# [1,] -0.5  0.0  5.000000e-01
+# [2,]  1.0 -0.5  4.163336e-17
+# [3,] -0.5  1.0 -5.000000e-01
